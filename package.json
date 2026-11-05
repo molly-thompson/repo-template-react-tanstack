@@ -69,6 +69,10 @@
     "typescript": "^7.0.2",
     "vite": "^8.3.6",
     "vitest": "^5.1.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,css,json,html}": [
+      "biome check --write --no-errors-on-unmatched"
+    ]
   }
-
 }
