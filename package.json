@@ -1,5 +1,7 @@
 {
   "name": "repo-template-react-tanstack",
+  "description": "Repository template for TanStack Start, React 19, Tailwind v4, and Biome.",
+  "author": "Molly Thompson",
   "private": true,
   "devEngines": {
     "packageManager": {
@@ -19,11 +21,17 @@
   "scripts": {
     "dev": "vite dev --port 3000",
     "generate-routes": "vite build",
+    "typecheck": "tsc --noEmit",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "biome format",
-    "lint": "biome lint",
-    "check": "biome check"
+    "format": "biome format --write .",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "ci": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run build",
+    "prepare": "husky",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest --coverage"
   },
   "dependencies": {
     "@t3-oss/env-core": "^0.13.10",
@@ -46,12 +54,21 @@
   "devDependencies": {
     "@biomejs/biome": "^2.6.5",
     "@tailwindcss/typography": "^0.5.4",
-    "@tanstack/devtools-vite": "0.8.6",
+    "@tanstack/devtools-vite": "^0.8.6",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
     "@types/node": "^22.10.2",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^6.2.1",
+    "husky": "^9.1.7",
+    "jsdom": "^31.0.0",
+    "lint-staged": "^17.6.0",
     "typescript": "^7.0.2",
-    "vite": "^8.3.6"
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
   }
+
 }
