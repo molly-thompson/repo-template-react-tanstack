@@ -19,6 +19,7 @@
     "#/*": "./src/*"
   },
   "scripts": {
+    "setup": "node scripts/setup.js",
     "dev": "vite dev --port 3000",
     "generate-routes": "vite build",
     "typecheck": "tsc --noEmit",
