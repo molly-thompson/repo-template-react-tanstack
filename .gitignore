@@ -16,11 +16,26 @@ Desktop.ini
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# Docker & Logs
+# Logs & Temporary Cache
 *.log
 logs/
-
-# Temporary & Cache
 .cache/
 .tmp/
 tmp/
+*.local
+__unconfig*
+
+# Dependencies & build
+node_modules/
+dist/
+dist-ssr/
+.nitro/
+.tanstack/
+.wrangler/
+.output/
+.vinxi/
+
+# Environment variables
+.env
+.env.*
+!.env.example
