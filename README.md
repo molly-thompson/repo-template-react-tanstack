@@ -1,380 +1,176 @@
-# Welcome to your new TanStack Start app!
+# [Your Project Name]
 
-# Getting Started
+A production-ready, opinionated starter template built on **TanStack Start**, **React 19**, **Tailwind CSS v4**, and **Biome**, managed via **pnpm**. Designed for rapid development with strict TypeScript governance, Vitest setup, automated pre-commit quality gates, and containerized deployment.
 
-To run this application:
+## 🛠 Tech Stack
 
-```bash
-npm install
-npm run dev
-```
+* **Framework:** [TanStack Start](https://tanstack.com/start) (Full-stack React with SSR/SSG & file-based routing)
+* **Package Manager:** [pnpm](https://pnpm.io/)
+* **Containerization:** Docker (`Dockerfile`)
+* **UI & Styling:** [React 19](https://react.dev/), [Tailwind CSS v4](https://tailwindcss.com/)
+* **Tooling & Dev Server:** [Vite](https://vitejs.dev/), [Nitro](https://nitro.unjs.io/)
+* **Formatting & Linting:** [Biome](https://biomejs.dev/) (Tab-indentation, strict ruleset)
+* **Testing:** [Vitest](https://vitest.dev/), [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/)
+* **Type Safety:** [TypeScript](https://www.typescriptlang.org/) with `exactOptionalPropertyTypes` and strict checking
+* **Git Automation:** [Husky](https://typicode.github.io/husky/), [lint-staged](https://github.com/lint-staged/lint-staged)
 
-# Building For Production
+## 🚀 Getting Started & Initialization
 
-To build this application for production:
+1. **Generate Your Repository:**
+Go to your template repository on GitHub and click the green **"Use this template"** dropdown button, then select **"Create a new repository"**. Give your new project a name and choose whether it's public or private.
 
-```bash
-npm run build
-```
-
-## Styling
-
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-### Removing Tailwind CSS
-
-If you prefer not to use Tailwind CSS:
-:...skipping...
-Welcome to your new TanStack Start app!
-
-# Getting Started
-
-To run this application:
+2. **Clone Your New Repository:**
+Once GitHub generates your new repository, copy its HTTPS or SSH clone URL. Open your terminal and run the clone command, then `cd` straight into your new project folder:
 
 ```bash
-npm install
-npm run dev
+git clone https://github.com/your-username/your-new-project-name.git
+cd your-new-project-name
 ```
 
-# Building For Production
+3. **Run the Interactive Setup Script:**
 
-To build this application for production:
+Now that you're inside the project root, run the setup script. This is the custom Node script you built that will automatically prompt you for your project name, description, author, and GitHub username, and then rewrite your `package.json` and `README.md` metadata for you:
 
 ```bash
-npm run build
+node setup.js
 ```
 
-## Styling
+4. **Install Dependencies & Start Dev Server:**
 
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-### Removing Tailwind CSS
-
-If you prefer not to use Tailwind CSS:
-
-1. Remove the demo pages in `src/routes/demo/`
-2. Replace the Tailwind import in `src/styles.css` with your own styles
-3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
-4. Remove `@tailwindcss/vite` and `tailwindcss` from `package.json`
-
-## Linting & Formatting
-
-This project uses [Biome](https://biomejs.dev/) for linting and formatting. The following scripts are available:
-
+With your project metadata updated, install your packages using `pnpm` and spin up your local dev server:
 
 ```bash
-npm run lint
-npm run format
-npm run check
+pnpm install
+pnpm dev
 ```
 
+The app will be available at `http://localhost:3000`.
 
-## Deploy with Nitro
+## 📜 Available Scripts
 
-This project uses Nitro as a generic server adapter, so it can run on any Node-compatible host.
-:...skipping...
-Welcome to your new TanStack Start app!
+| Command | Description |
+| --- | --- |
+| `pnpm dev` | Starts Vite dev server on port `3000` |
+| `pnpm build` | Runs typechecks and builds the production bundle |
+| `pnpm preview` | Previews the local production build |
+| `pnpm typecheck` | Runs `tsc --noEmit` across the codebase |
+| `pnpm lint` | Checks code against Biome rules |
+| `pnpm lint:fix` | Fixes auto-fixable Biome errors and formats code |
+| `pnpm format` | Formats codebase using Biome |
+| `pnpm test` | Runs Vitest test runner |
+| `pnpm coverage` | Generates test coverage report via Vitest |
+| `pnpm ci` | Runs total quality verification (`typecheck` + `lint` + `test` + `build`) |
 
-# Getting Started
+## 🐳 Docker Deployment
 
-To run this application:
+This template includes a production-ready `Dockerfile` optimized for building and running the TanStack Start / Nitro server application inside a container.
+
+To build and run the Docker container locally:
 
 ```bash
-npm install
-npm run dev
+
+# Build the Docker image
+
+docker build -t your-project-name .
+
+# Run the container on port 3000
+
+docker run -p 3000:3000 your-project-name
 ```
 
-# Building For Production
+## 🧩 Adding UI Components (Shadcn)
 
-To build this application for production:
-
-```bash
-npm run build
-```
-
-## Styling
-
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-### Removing Tailwind CSS
-
-If you prefer not to use Tailwind CSS:
-
-1. Remove the demo pages in `src/routes/demo/`
-2. Replace the Tailwind import in `src/styles.css` with your own styles
-3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
-4. Remove `@tailwindcss/vite` and `tailwindcss` from `package.json`
-
-## Linting & Formatting
-
-This project uses [Biome](https://biomejs.dev/) for linting and formatting. The following scripts are available:
-
-
-```bash
-npm run lint
-npm run format
-npm run check
-```
-
-
-## Deploy with Nitro
-
-This project uses Nitro as a generic server adapter, so it can run on any Node-compatible host.
-
-```bash
-npm run build
-node .output/server/index.mjs
-:
-Welcome to your new TanStack Start app!
-
-# Getting Started
-
-To run this application:
-
-```bash
-npm install
-npm run dev
-```
-
-# Building For Production
-
-To build this application for production:
-
-```bash
-npm run build
-```
-
-## Styling
-
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-### Removing Tailwind CSS
-
-If you prefer not to use Tailwind CSS:
-
-1. Remove the demo pages in `src/routes/demo/`
-2. Replace the Tailwind import in `src/styles.css` with your own styles
-3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
-4. Remove `@tailwindcss/vite` and `tailwindcss` from `package.json`
-
-## Linting & Formatting
-
-This project uses [Biome](https://biomejs.dev/) for linting and formatting. The following scripts are available:
-
-
-```bash
-npm run lint
-npm run format
-npm run check
-```
-
-
-## Deploy with Nitro
-
-This project uses Nitro as a generic server adapter, so it can run on any Node-compatible host.
-
-```bash
-npm run build
-node .output/server/index.mjs
-```
-
-The build output is a self-contained Node server. To deploy, push the `.output/` directory to your host (Render,
- Fly.io, your own VPS, etc.) and run the server command above.
-
-For host-specific presets (Vercel, Netlify, Cloudflare, AWS Lambda, etc.) and tuning, see https://v3.nitro.build
-/deploy.
-
-
-## T3Env
-
-- You can use T3Env to add type safety to your environment variables.
-- Add Environment variables to the `src/env.mjs` file.
-- Use the environment variables in your code.
-
-### Usage
-
-```ts
-import { env } from "#/env";
-
-console.log(env.VITE_APP_TITLE);
-```
-
-
-
-
-
-## Shadcn
-
-Add components using the latest version of [Shadcn](https://ui.shadcn.com/).
+This template supports adding components using the latest version of [Shadcn UI](https://ui.shadcn.com/). To add a component, run e.g.:
 
 ```bash
 pnpm dlx shadcn@latest add button
 ```
 
+## 🗺 Core Architecture & Patterns
 
+### 1. File-Based Routing & Navigation
 
-## Routing
-
-This project uses [TanStack Router](https://tanstack.com/router) with file-based routing. Routes are managed as 
-files in `src/routes`.
-
-### Adding A Route
-
-To add a new route to your application just add a new file in the `./src/routes` directory.
-
-TanStack will automatically generate the content of the route file for you.
-
-Now that you have two routes you can use a `Link` component to navigate between them.
-
-### Adding Links
-
-To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/rea
-ct-router`.
+Routing is managed via **TanStack Router** (`src/routes`). Adding a new file to `./src/routes` auto-generates the route. Use the `Link` component for SPA client navigation:
 
 ```tsx
 import { Link } from "@tanstack/react-router";
+
+export function Nav() {
+    return About;
+}
 ```
 
-Then anywhere in your JSX you can use it like so:
+### 2. Data Loading
+
+Leverage route `loader` functions to fetch data before a component renders:
 
 ```tsx
-<Link to="/about">About</Link>
+import { createFileRoute } from "@tanstack/react-router"
+
+export const Route = createFileRoute("/people")({
+    loader: async () => {
+        const res = await fetch("https://api.example.com/people");
+        return res.json();
+    },
+    component: PeopleView,
+});
 ```
 
-This will create a link that will navigate to the `/about` route.
+### 3. Server Functions & API Routes
 
-More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1
-/docs/framework/react/api/router/linkComponent).
-
-### Using A Layout
-
-In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root r
-oute will appear in all the routes. The route content will appear in the JSX where you render `{children}` in th
-e `shellComponent`.
-
-Here is an example layout that includes a header:
-
-```tsx
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-
-export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'My App' },
-    ],
-  }),
-  shellComponent: ({ children }) => (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <header>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-          </nav>
-        </header>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  ),
-})
-```
-
-More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/
-framework/react/guide/routing-concepts#layouts).
-
-## Server Functions
-
-TanStack Start provides server functions that allow you to write server-side code that seamlessly integrates wit
-h your client components.
+Write type-safe server-side logic using TanStack Start server functions:
 
 ```tsx
 import { createServerFn } from '@tanstack/react-start'
 
-const getServerTime = createServerFn({
-  method: 'GET',
-}).handler(async () => {
-  return new Date().toISOString()
-})
-
-// Use in a component
-function MyComponent() {
-  const [time, setTime] = useState('')
-  
-  useEffect(() => {
-    getServerTime().then(setTime)
-  }, [])
-  
-  return <div>Server time: {time}</div>
-}
-```
-
-## API Routes
-
-You can create API routes by using the `server` property in your route definitions:
-
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-import { json } from '@tanstack/react-start'
-
-export const Route = createFileRoute('/api/hello')({
-  server: {
-    handlers: {
-      GET: () => json({ message: 'Hello, World!' }),
-    },
-  },
+const getServerTime = createServerFn({ method: 'GET' }).handler(async () => {
+    return new Date().toISOString()
 })
 ```
 
-## Data Fetching
+## 🚢 Deployment (Nitro)
 
-There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a serve
-r. But you can also use the `loader` functionality built into TanStack Router to load the data for a route befor
-e it's rendered.
+This project uses **Nitro** as a generic server adapter, producing a self-contained Node server in `.output/`.
 
-For example:
-
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-
-export const Route = createFileRoute('/people')({
-  loader: async () => {
-    const response = await fetch('https://swapi.dev/api/people')
-    return response.json()
-  },
-  component: PeopleComponent,
-})
-
-function PeopleComponent() {
-  const data = Route.useLoaderData()
-  return (
-    <ul>
-      {data.results.map((person) => (
-        <li key={person.name}>{person.name}</li>
-      ))}
-    </ul>
-  )
-}
+```bash
+pnpm build
+node .output/server/index.mjs
 ```
 
-Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation]
-(https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
+To deploy, push the `.output/` directory or use the provided `Dockerfile` on your host (Render, Fly.io, VPS, etc.). For host-specific presets see the [Nitro Deployment Docs](https://v3.nitro.build/deploy).
 
+## 🔒 Quality Gates & Governance
 
-# Demo files
+### Husky & Pre-Commit Hooks
 
-Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play aro
-und with the features you've installed.
+Pre-commit hooks are enforced via **Husky** and **lint-staged**. Staged files are automatically validated and formatted on commit:
 
+* **TypeScript Files (`*.ts`):** Checks types (`tsc --noEmit --skipLibCheck`)
+* **Codebase (`*.ts, *.js, *.css, *.json, *.html`):** Autofixes formatting & linting issues via Biome
 
-# Learn More
+### Continuous Integration (CI)
 
-You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com
-).
+An isolated GitHub Actions pipeline (`.github/workflows/ci.yml`) runs on every push and all pull requests, validating:
 
-For TanStack Start specific documentation, visit [TanStack Start](https://tanstack.com/start).
+1. `typecheck`
+2. `lint`
+3. `test`
+4. `build`
+
+If you'd like to ensure these checks pass before being merged, you can enforce this by creating a branch protection rule in your GitHub repository settings.
+
+## 📁 Project Architecture & Demo Files
+
+* **`src/routes/`** — File-based routing (TanStack Router).
+* **`setup.js`** — Interactive repository initialization script.
+* **`Dockerfile`** — Containerization configuration for production builds.
+* **`.github/workflows/ci.yml`** — Automated CI quality gate.
+* **`.husky/`** — Local pre-commit hook automation.
+
+---
+
+## 📚 Learn More
+
+* [TanStack Start Documentation](https://tanstack.com/start)
+* [Biome Documentation](https://biomejs.dev/)
+* [Tailwind CSS v4](https://tailwindcss.com/)
